@@ -5,7 +5,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/pysga1996/spooky-cart-service/config"
 	"github.com/pysga1996/spooky-cart-service/controller"
-	"github.com/pysga1996/spooky-cart-service/error"
 	"github.com/pysga1996/spooky-cart-service/middleware"
 )
 
@@ -15,17 +14,19 @@ func main() {
 	// close database
 	defer func(db *sql.DB) {
 		err := db.Close()
-		error.CheckErrorShutdown(err)
+		middleware.CheckErrorShutdown(err)
 	}(db)
 	router := gin.Default()
+	router.Use(middleware.HandleError)
+	router.Use(middleware.HandleToken)
+	router.Use(gin.Logger())
 
-	router.Use(middleware.Handle, error.Handle, gin.Logger())
 	RegisterRoutes(router)
 	//router.Use(gin.Logger())
 	//router.Use(gin.Recovery())
 
 	// Start serving the application
 	err2 := router.Run()
-	error.CheckErrorShutdown(err2)
+	middleware.CheckErrorShutdown(err2)
 
 }

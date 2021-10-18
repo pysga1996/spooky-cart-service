@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/lib/pq"
-	"github.com/pysga1996/spooky-cart-service/error"
+	"github.com/pysga1996/spooky-cart-service/middleware"
 	"os"
 	"strconv"
 )
@@ -21,13 +21,13 @@ func ConnectDatabase() (db *sql.DB) {
 
 	// open database
 	db, err := sql.Open("postgres", psqlConn)
-	error.CheckErrorShutdown(err)
+	middleware.CheckErrorShutdown(err)
 
 	// check db
 	err = db.Ping()
-	error.CheckErrorShutdown(err)
+	middleware.CheckErrorShutdown(err)
 	_, err2 := db.Exec(`set search_path='spooky_cart'`)
-	error.CheckErrorShutdown(err2)
+	middleware.CheckErrorShutdown(err2)
 	fmt.Println("Connected!")
 	return db
 }

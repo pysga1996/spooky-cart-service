@@ -1,4 +1,4 @@
-package error
+package middleware
 
 import (
 	"github.com/gin-gonic/gin"
@@ -10,6 +10,12 @@ func CheckErrorShutdown(err error) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func Unauthorized(c *gin.Context, err error) {
+	_ = c.Error(err)
+	c.Status(http.StatusUnauthorized)
+	c.Abort()
 }
 
 func BadRequest(c *gin.Context, err error) {
@@ -30,7 +36,7 @@ func InternalServer(c *gin.Context, err error) {
 	c.Abort()
 }
 
-func Handle(c *gin.Context) {
+func HandleError(c *gin.Context) {
 	c.Next()
 	if len(c.Errors) > 0 {
 		c.JSON(-1, gin.H{

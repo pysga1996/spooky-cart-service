@@ -30,5 +30,5 @@ func RegisterRoutes(router *gin.Engine) {
 		)
 
 	})
-	router.GET("/api/cart/:id", controller.GetCart)
+	router.GET("/api/cart", controller.GetCart)
 }
