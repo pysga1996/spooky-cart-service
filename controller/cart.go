@@ -6,8 +6,10 @@ import (
 	"github.com/pysga1996/spooky-cart-service/error"
 	"github.com/pysga1996/spooky-cart-service/model"
 	"github.com/pysga1996/spooky-cart-service/util"
+	"log"
 	"net/http"
 	"strconv"
+	"time"
 )
 
 func GetCart(c *gin.Context) {
@@ -35,4 +37,41 @@ func GetCart(c *gin.Context) {
 	} else {
 		error.BadRequest(c, err)
 	}
+}
+
+func CreateCart(c *gin.Context) {
+	var cart model.Cart
+
+	// Call BindJSON to bind the received JSON to
+	// cart.
+	if err := c.BindJSON(&cart); err != nil {
+		error.BadRequest(c, err)
+		return
+	}
+	tx, err := DB.Begin()
+	if err != nil {
+		error.InternalServer(c, err)
+		return
+	}
+	// Add new cart
+	result, err := tx.Exec("INSERT INTO cart(create_time, status) VALUES ($1, $2)", time.Now(), 1)
+	if err != nil {
+		if err := tx.Rollback(); err != nil {
+			error.InternalServer(c, err)
+			return
+		}
+		error.InternalServer(c, err)
+		return
+	}
+	id, err := result.LastInsertId()
+	if err != nil {
+		error.InternalServer(c, err)
+		return
+	}
+	log.Printf("Inserted Id = %d\n", id)
+	if err := tx.Commit(); err != nil {
+		error.InternalServer(c, err)
+		return
+	}
+	c.IndentedJSON(http.StatusCreated, cart)
 }

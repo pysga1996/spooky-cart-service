@@ -6,8 +6,12 @@ go 1.17
 // +heroku install github.com/pysga1996/spooky-cart-service
 
 require (
-    github.com/gin-gonic/gin v1.7.4
-    github.com/lib/pq v1.10.3
+	github.com/gin-gonic/gin v1.7.4
+	github.com/golang-jwt/jwt v3.2.2+incompatible
+	github.com/lib/pq v1.10.3
+)
+
+require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.13.0 // indirect
 	github.com/go-playground/universal-translator v0.17.0 // indirect
