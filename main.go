@@ -6,6 +6,7 @@ import (
 	"github.com/pysga1996/spooky-cart-service/config"
 	"github.com/pysga1996/spooky-cart-service/controller"
 	"github.com/pysga1996/spooky-cart-service/error"
+	"github.com/pysga1996/spooky-cart-service/middleware"
 )
 
 func main() {
@@ -18,7 +19,7 @@ func main() {
 	}(db)
 	router := gin.Default()
 
-	router.Use(error.Handle, gin.Logger())
+	router.Use(middleware.Handle, error.Handle, gin.Logger())
 	RegisterRoutes(router)
 	//router.Use(gin.Logger())
 	//router.Use(gin.Recovery())
