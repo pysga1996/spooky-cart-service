@@ -8,7 +8,7 @@ import (
 type Cart struct {
 	tableName       struct{}
 	id              *uint64
-	productQuantity *map[uint64]uint8
+	productQuantity *map[string]*uint8
 	createTime      *time.Time
 	updateTime      *time.Time
 	status          *uint8
@@ -22,11 +22,11 @@ func (a *Cart) SetId(id *uint64) {
 	a.id = id
 }
 
-func (a *Cart) ProductQuantity() *map[uint64]uint8 {
+func (a *Cart) ProductQuantity() *map[string]*uint8 {
 	return a.productQuantity
 }
 
-func (a *Cart) SetProductQuantity(productQuantity *map[uint64]uint8) {
+func (a *Cart) SetProductQuantity(productQuantity *map[string]*uint8) {
 	a.productQuantity = productQuantity
 }
 
@@ -56,11 +56,11 @@ func (a *Cart) SetStatus(status *uint8) {
 
 func (a *Cart) MarshalJSON() ([]byte, error) {
 	return json.Marshal(struct {
-		Id              *uint64           `json:"id"`
-		ProductQuantity *map[uint64]uint8 `json:"productQuantity"`
-		CreateTime      *time.Time        `json:"createTime"`
-		UpdateTime      *time.Time        `json:"updateTime"`
-		Status          *uint8            `json:"status"`
+		Id              *uint64            `json:"id"`
+		ProductQuantity *map[string]*uint8 `json:"productQuantity"`
+		CreateTime      *time.Time         `json:"createTime"`
+		UpdateTime      *time.Time         `json:"updateTime"`
+		Status          *uint8             `json:"status"`
 	}{
 		Id:              a.id,
 		ProductQuantity: a.productQuantity,
@@ -72,11 +72,11 @@ func (a *Cart) MarshalJSON() ([]byte, error) {
 
 func (a *Cart) UnmarshalJSON(bytes []byte) error {
 	var tmp struct {
-		Id              uint64           `json:"id"`
-		ProductQuantity map[uint64]uint8 `json:"productQuantity"`
-		CreateTime      time.Time        `json:"createTime"`
-		UpdateTime      time.Time        `json:"updateTime"`
-		Status          uint8            `json:"status"`
+		Id              uint64            `json:"id"`
+		ProductQuantity map[string]*uint8 `json:"productQuantity"`
+		CreateTime      time.Time         `json:"createTime"`
+		UpdateTime      time.Time         `json:"updateTime"`
+		Status          uint8             `json:"status"`
 	}
 	err := json.Unmarshal(bytes, &tmp)
 	if err != nil {

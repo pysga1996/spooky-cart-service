@@ -17,13 +17,9 @@ func main() {
 		middleware.CheckErrorShutdown(err)
 	}(db)
 	router := gin.Default()
-	router.Use(middleware.HandleError)
-	router.Use(middleware.HandleToken)
-	router.Use(gin.Logger())
+	router.Use(middleware.HandleError, middleware.HandleToken)
 
 	RegisterRoutes(router)
-	//router.Use(gin.Logger())
-	//router.Use(gin.Recovery())
 
 	// Start serving the application
 	err2 := router.Run()

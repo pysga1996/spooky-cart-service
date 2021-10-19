@@ -31,4 +31,7 @@ func RegisterRoutes(router *gin.Engine) {
 
 	})
 	router.GET("/api/cart", controller.GetCart)
+	router.POST("/api/cart", controller.AddCartProduct)
+	router.PATCH("/api/cart", controller.UpdateCartProduct)
+	router.DELETE("/api/cart", controller.DeleteCartProduct)
 }

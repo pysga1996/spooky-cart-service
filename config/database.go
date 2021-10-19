@@ -23,11 +23,12 @@ func ConnectDatabase() (db *sql.DB) {
 	db, err := sql.Open("postgres", psqlConn)
 	middleware.CheckErrorShutdown(err)
 
+	db.SetMaxIdleConns(10)
+	db.SetMaxOpenConns(20)
+
 	// check db
 	err = db.Ping()
 	middleware.CheckErrorShutdown(err)
-	_, err2 := db.Exec(`set search_path='spooky_cart'`)
-	middleware.CheckErrorShutdown(err2)
 	fmt.Println("Connected!")
 	return db
 }
