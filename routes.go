@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/pysga1996/spooky-cart-service/controller"
+	"github.com/pysga1996/spooky-cart-service/middleware"
 	"net/http"
 )
 
@@ -30,8 +31,8 @@ func RegisterRoutes(router *gin.Engine) {
 		)
 
 	})
-	router.GET("/api/cart", controller.GetCart)
-	router.POST("/api/cart", controller.AddCartProduct)
-	router.PATCH("/api/cart", controller.UpdateCartProduct)
-	router.DELETE("/api/cart", controller.DeleteCartProduct)
+	router.GET("/api/cart", middleware.HandleGuard, controller.GetCart)
+	router.POST("/api/cart", middleware.HandleGuard, controller.AddCartProduct)
+	router.PATCH("/api/cart", middleware.HandleGuard, controller.UpdateCartProduct)
+	router.DELETE("/api/cart", middleware.HandleGuard, controller.DeleteCartProduct)
 }

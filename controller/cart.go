@@ -33,10 +33,6 @@ func DeleteCartProduct(c *gin.Context) {
 
 func getCart(c *gin.Context) {
 	currentUser := c.GetString(constant.UID)
-	if len(currentUser) == 0 {
-		middleware.Unauthorized(c, errors.New("not logged in yet"))
-		return
-	}
 	var err error
 	var id uint64
 	var createTime sql.NullTime
@@ -134,10 +130,6 @@ func GetCartProducts(c *gin.Context, cartId uint64) (cartProducts *map[string]*u
 
 func addCartProduct(c *gin.Context) {
 	currentUser := c.GetString(constant.UID)
-	if len(currentUser) == 0 {
-		middleware.Unauthorized(c, errors.New("not logged in yet"))
-		return
-	}
 	var err error
 	var id uint64
 	var stmt *sql.Stmt
@@ -182,10 +174,6 @@ func addCartProduct(c *gin.Context) {
 
 func updateCartProduct(c *gin.Context) {
 	currentUser := c.GetString(constant.UID)
-	if len(currentUser) == 0 {
-		middleware.Unauthorized(c, errors.New("not logged in yet"))
-		return
-	}
 	var err error
 	var id uint64
 	var stmt *sql.Stmt
@@ -230,10 +218,6 @@ func updateCartProduct(c *gin.Context) {
 
 func deleteCartProduct(c *gin.Context) {
 	currentUser := c.GetString(constant.UID)
-	if len(currentUser) == 0 {
-		middleware.Unauthorized(c, errors.New("not logged in yet"))
-		return
-	}
 	var err error
 	var id uint64
 	var stmt *sql.Stmt
