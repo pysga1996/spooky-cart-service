@@ -148,19 +148,10 @@ func addCartProduct(c *gin.Context) {
 	}
 	row := stmt.QueryRow(currentUser, constant.STATUS_ACTIVE)
 	err = row.Scan(&id)
-	var newCartProducts []model.CartProduct
+	var newCartProducts []*model.CartProduct
 	// Call BindJSON to bind the received JSON to
 	if err = c.BindJSON(&newCartProducts); err != nil {
 		middleware.BadRequest(c, err)
-		return
-	}
-	var tx *sql.Tx
-	if tx, err = DB.Begin(); err != nil {
-		middleware.InternalServer(c, err)
-		return
-	}
-	if err = SetSchema(); err != nil {
-		middleware.InternalServer(c, err)
 		return
 	}
 	stmt, err = DB.Prepare(`INSERT INTO cart_product (cart_id, product_code, quantity) VALUES ($1, $2, $3) ON CONFLICT ON CONSTRAINT cart_product_pk DO UPDATE SET quantity = $3, status = $4`)
@@ -180,11 +171,12 @@ func addCartProduct(c *gin.Context) {
 		product.CartId = &id
 		count += insertCount
 	}
-	if err = tx.Commit(); err != nil {
+	log.Printf("Rows inserted count: %d", count)
+	result, err = DB.Exec("UPDATE cart SET update_time = $2 WHERE id = $1", id, time.Now())
+	if err != nil {
 		middleware.InternalServer(c, err)
 		return
 	}
-	log.Printf("Rows inserted count: %d", count)
 	c.IndentedJSON(http.StatusCreated, newCartProducts)
 }
 
@@ -204,19 +196,10 @@ func updateCartProduct(c *gin.Context) {
 	}
 	row := stmt.QueryRow(currentUser, constant.STATUS_ACTIVE)
 	err = row.Scan(&id)
-	var newCartProducts []model.CartProduct
+	var newCartProducts []*model.CartProduct
 	// Call BindJSON to bind the received JSON to
 	if err = c.BindJSON(&newCartProducts); err != nil {
 		middleware.BadRequest(c, err)
-		return
-	}
-	var tx *sql.Tx
-	if tx, err = DB.Begin(); err != nil {
-		middleware.InternalServer(c, err)
-		return
-	}
-	if err = SetSchema(); err != nil {
-		middleware.InternalServer(c, err)
 		return
 	}
 	stmt, err = DB.Prepare("UPDATE cart_product SET quantity = $3 WHERE cart_id = $1 AND product_code = $2 AND status = $4")
@@ -236,11 +219,12 @@ func updateCartProduct(c *gin.Context) {
 		product.CartId = &id
 		count += insertCount
 	}
-	if err = tx.Commit(); err != nil {
+	log.Printf("Rows updated count: %d", count)
+	result, err = DB.Exec("UPDATE cart SET update_time = $2 WHERE id = $1", id, time.Now())
+	if err != nil {
 		middleware.InternalServer(c, err)
 		return
 	}
-	log.Printf("Rows updated count: %d", count)
 	c.IndentedJSON(http.StatusCreated, newCartProducts)
 }
 
@@ -279,5 +263,10 @@ func deleteCartProduct(c *gin.Context) {
 		return
 	}
 	log.Printf("Rows updated count: %d", count)
+	result, err = DB.Exec("UPDATE cart SET update_time = $2 WHERE id = $1", id, time.Now())
+	if err != nil {
+		middleware.InternalServer(c, err)
+		return
+	}
 	c.Status(http.StatusOK)
 }
