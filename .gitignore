@@ -2,3 +2,4 @@
 /.idea/sqldialects.xml
 /.idea/dataSources.xml
 /environment/
+/build/

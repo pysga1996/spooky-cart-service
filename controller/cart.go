@@ -52,6 +52,7 @@ func getCart(c *gin.Context) {
 			middleware.InternalServer(c, err)
 			return
 		}
+		row = stmt.QueryRow(currentUser, constant.STATUS_ACTIVE)
 		err = row.Scan(&id, &createTime, &updateTime, &status)
 		if err != nil {
 			middleware.InternalServer(c, err)

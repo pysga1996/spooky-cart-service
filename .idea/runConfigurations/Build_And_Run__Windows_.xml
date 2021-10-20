@@ -1,7 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="go build github.com/pysga1996/spooky-cart-service" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+  <configuration default="false" name="Build And Run (Windows)" type="GoApplicationRunConfiguration" factoryName="Go Application">
     <module name="spooky-cart-service" />
     <working_directory value="$PROJECT_DIR$" />
+    <go_parameters value="-o ./build/spooky-cart-service-v1.exe" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="true" />
       <option name="IS_SUBST" value="false" />
