@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/pysga1996/spooky-cart-service/controller"
-	"github.com/pysga1996/spooky-cart-service/middleware"
+	"github.com/thanh-vt/spooky-cart-service/controller"
+	"github.com/thanh-vt/spooky-cart-service/middleware"
 	"net/http"
 )
 

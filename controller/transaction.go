@@ -3,7 +3,7 @@ package controller
 import (
 	"database/sql"
 	"github.com/gin-gonic/gin"
-	"github.com/pysga1996/spooky-cart-service/middleware"
+	"github.com/thanh-vt/spooky-cart-service/middleware"
 )
 
 func SetSchema() error {

@@ -1,9 +1,9 @@
-module github.com/pysga1996/spooky-cart-service
+module github.com/thanh-vt/spooky-cart-service
 
-// +heroku goVersion go1.17
-go 1.17
+// +heroku goVersion go1.18
+go 1.18
 
-// +heroku install github.com/pysga1996/spooky-cart-service
+// +heroku install github.com/thanh-vt/spooky-cart-service
 
 require (
 	github.com/gin-gonic/gin v1.7.4

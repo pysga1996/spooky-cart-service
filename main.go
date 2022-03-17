@@ -3,9 +3,9 @@ package main
 import (
 	"database/sql"
 	"github.com/gin-gonic/gin"
-	"github.com/pysga1996/spooky-cart-service/config"
-	"github.com/pysga1996/spooky-cart-service/controller"
-	"github.com/pysga1996/spooky-cart-service/middleware"
+	"github.com/thanh-vt/spooky-cart-service/config"
+	"github.com/thanh-vt/spooky-cart-service/controller"
+	"github.com/thanh-vt/spooky-cart-service/middleware"
 )
 
 func main() {

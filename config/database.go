@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/lib/pq"
-	"github.com/pysga1996/spooky-cart-service/middleware"
+	"github.com/thanh-vt/spooky-cart-service/middleware"
 	"os"
 	"strconv"
 )
