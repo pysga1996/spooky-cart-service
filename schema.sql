@@ -1,3 +1,5 @@
+create schema spooky_cart;
+
 create table spooky_cart.cart
 (
     id bigserial not null
