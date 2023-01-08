@@ -2,7 +2,7 @@
   <configuration default="false" name="Build And Run (Windows)" type="GoApplicationRunConfiguration" factoryName="Go Application">
     <module name="spooky-cart-service" />
     <working_directory value="$PROJECT_DIR$" />
-    <go_parameters value="-o ./build/spooky-cart-service-v1.exe" />
+    <go_parameters value="-o ../../build/spooky-cart-service-v1.exe" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="true" />
       <option name="IS_SUBST" value="false" />
@@ -10,14 +10,15 @@
       <option name="IS_IGNORE_MISSING_FILES" value="false" />
       <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
       <ENTRIES>
-        <ENTRY IS_ENABLED="true" PARSER="runconfig" />
-        <ENTRY IS_ENABLED="true" PARSER="env" PATH="environment/.env" />
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH="environment/.env" />
       </ENTRIES>
     </EXTENSION>
     <kind value="PACKAGE" />
     <package value="github.com/thanh-vt/spooky-cart-service/cmd/spooky-cart-service" />
     <directory value="$PROJECT_DIR$" />
     <filePath value="$PROJECT_DIR$/src/main.go" />
+    <output_directory value="$PROJECT_DIR$/build" />
     <method v="2" />
   </configuration>
 </component>
