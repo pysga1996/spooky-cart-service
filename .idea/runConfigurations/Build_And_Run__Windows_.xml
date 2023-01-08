@@ -15,7 +15,7 @@
       </ENTRIES>
     </EXTENSION>
     <kind value="PACKAGE" />
-    <package value="github.com/thanh-vt/spooky-cart-service" />
+    <package value="github.com/thanh-vt/spooky-cart-service/cmd/spooky-cart-service" />
     <directory value="$PROJECT_DIR$" />
     <filePath value="$PROJECT_DIR$/src/main.go" />
     <method v="2" />

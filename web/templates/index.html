@@ -1,0 +1,16 @@
+<!--index.html-->
+
+<!--Embed the header.html templates at this location-->
+{{ template "header.html" .}}
+
+<h1></h1>
+<main class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-5">Hello {{ .framework }}!</h1>
+        <p class="lead text-primary">This a Cart Management Service </p>
+    </div>
+</main>
+
+<!--Embed the footer.html templates at this location-->
+{{ template "footer.html" .}}
+
