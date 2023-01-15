@@ -1,9 +1,9 @@
-module github.com/thanh-vt/spooky-cart-service
+module github.com/thanh-vt/splash-inventory-service
 
 // +heroku goVersion go1.18
 go 1.18
 
-// +heroku install github.com/thanh-vt/spooky-cart-service
+// +heroku install github.com/thanh-vt/splash-inventory-service
 
 require (
 	github.com/gin-gonic/gin v1.7.4

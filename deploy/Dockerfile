@@ -1,10 +1,10 @@
 FROM golang:1.18-alpine
 
-WORKDIR /opt/spooky-cart-service
+WORKDIR /opt/splash-inventory-service
 
-COPY ../spooky-cart-service-v1 /opt/spooky-cart-service
-ADD ../web/templates /opt/spooky-cart-service/templates
-RUN chmod a+x /opt/spooky-cart-service/spooky-cart-service-v1
+COPY ../splash-inventory-service-v1 /opt/splash-inventory-service
+ADD ../web/templates /opt/splash-inventory-service/templates
+RUN chmod a+x /opt/splash-inventory-service/splash-inventory-service-v1
 
 EXPOSE 8090
-CMD [ "/opt/spooky-cart-service/spooky-cart-service-v1" ]
+CMD [ "/opt/splash-inventory-service/splash-inventory-service-v1" ]

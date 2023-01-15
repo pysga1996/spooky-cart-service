@@ -1,1 +1,1 @@
-web: bin/spooky-cart-service
+web: bin/splash-inventory-service

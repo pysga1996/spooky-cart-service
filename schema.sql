@@ -1,6 +1,6 @@
-create schema spooky_cart;
+create schema splash_inventory;
 
-create table spooky_cart.cart
+create table splash_inventory.cart
 (
     id bigserial not null
         constraint cart_pk
@@ -11,9 +11,9 @@ create table spooky_cart.cart
     status integer not null
 );
 
-alter table spooky_cart.cart owner to postgres;
+alter table splash_inventory.cart owner to postgres;
 
-create table spooky_cart.cart_product
+create table splash_inventory.cart_product
 (
     cart_id bigserial not null
         constraint cart_product_pk
@@ -22,5 +22,5 @@ create table spooky_cart.cart_product
     quantity integer not null
 );
 
-alter table spooky_cart.cart_product owner to postgres;
+alter table splash_inventory.cart_product owner to postgres;
 

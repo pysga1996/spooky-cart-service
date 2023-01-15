@@ -1,2 +1,2 @@
-# spooky-cart-service
+# splash-inventory-service
 Cart API

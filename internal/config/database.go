@@ -3,13 +3,16 @@ package config
 import (
 	"database/sql"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
-	"github.com/thanh-vt/spooky-cart-service/internal/middleware"
+	"github.com/thanh-vt/splash-inventory-service/internal/middleware"
 	"os"
 	"strconv"
 )
 
-func ConnectDatabase() (db *sql.DB) {
+var DB *sql.DB
+
+func ConnectDatabase() {
 	// connection string
 	var psqlConn string
 	if os.Getenv("DATABASE_URL") != "" {
@@ -26,15 +29,37 @@ func ConnectDatabase() (db *sql.DB) {
 	}
 
 	// open database
-	db, err := sql.Open("postgres", psqlConn)
-	middleware.CheckErrorShutdown(err)
+	DB, err := sql.Open("postgres", psqlConn)
+	// close database
+	defer func(db *sql.DB) {
+		err := db.Close()
+		middleware.CheckErrorShutdown(err)
+	}(DB)
 
-	db.SetMaxIdleConns(10)
-	db.SetMaxOpenConns(20)
+	DB.SetMaxIdleConns(10)
+	DB.SetMaxOpenConns(20)
 
 	// check db
-	err = db.Ping()
+	err = DB.Ping()
 	middleware.CheckErrorShutdown(err)
 	fmt.Println("Connected!")
-	return db
+}
+
+//func SetSchema() error {
+//	_, err := DB.Exec("SET search_path TO splash_inventory, public")
+//	return err
+//}
+
+func WithTransaction(c *gin.Context, handler gin.HandlerFunc) {
+	var err error
+	var tx *sql.Tx
+	if tx, err = DB.Begin(); err != nil {
+		middleware.InternalServer(c, err)
+		return
+	}
+	handler(c)
+	if err = tx.Commit(); err != nil {
+		middleware.InternalServer(c, err)
+		return
+	}
 }

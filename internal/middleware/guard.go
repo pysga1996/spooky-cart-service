@@ -3,7 +3,7 @@ package middleware
 import (
 	"errors"
 	"github.com/gin-gonic/gin"
-	"github.com/thanh-vt/spooky-cart-service/internal/constant"
+	"github.com/thanh-vt/splash-inventory-service/internal/constant"
 )
 
 func HandleGuard(c *gin.Context) {

@@ -2,8 +2,8 @@ package config
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/thanh-vt/spooky-cart-service/internal/controller"
-	"github.com/thanh-vt/spooky-cart-service/internal/middleware"
+	"github.com/thanh-vt/splash-inventory-service/internal/controller"
+	"github.com/thanh-vt/splash-inventory-service/internal/middleware"
 	"net/http"
 )
 

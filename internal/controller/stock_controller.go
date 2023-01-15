@@ -5,15 +5,18 @@ import (
 	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"
-	"github.com/thanh-vt/spooky-cart-service/internal/constant"
-	"github.com/thanh-vt/spooky-cart-service/internal/middleware"
-	model2 "github.com/thanh-vt/spooky-cart-service/internal/model"
-	"github.com/thanh-vt/spooky-cart-service/internal/util"
+	"github.com/thanh-vt/splash-inventory-service/internal/config"
+	"github.com/thanh-vt/splash-inventory-service/internal/constant"
+	"github.com/thanh-vt/splash-inventory-service/internal/middleware"
+	model2 "github.com/thanh-vt/splash-inventory-service/internal/model"
+	"github.com/thanh-vt/splash-inventory-service/internal/util"
 	"log"
 	"net/http"
 	"strings"
 	"time"
 )
+
+var DB = config.DB
 
 func GetCart(c *gin.Context) {
 	WithOutTransaction(c, getCart)

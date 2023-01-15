@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/spooky-cart-service.iml" filepath="$PROJECT_DIR$/.idea/spooky-cart-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/splash-inventory-service.iml" filepath="$PROJECT_DIR$/.idea/splash-inventory-service.iml" />
     </modules>
   </component>
 </project>

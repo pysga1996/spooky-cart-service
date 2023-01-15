@@ -1,8 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Build (Linux)" type="GoApplicationRunConfiguration" factoryName="Go Application">
-    <module name="spooky-cart-service" />
     <working_directory value="$PROJECT_DIR$" />
-    <go_parameters value="-o ../../build/spooky-cart-service-v1" />
+    <go_parameters value="-o ../../build/splash-inventory-service-v1" />
     <envs>
       <env name="GOOS" value="linux" />
       <env name="GOARCH" value="amd64" />
@@ -19,7 +18,7 @@
       </ENTRIES>
     </EXTENSION>
     <kind value="PACKAGE" />
-    <package value="github.com/thanh-vt/spooky-cart-service/cmd/spooky-cart-service" />
+    <package value="github.com/thanh-vt/spooky-cart-service/cmd/splash-inventory-service" />
     <directory value="$PROJECT_DIR$" />
     <filePath value="$PROJECT_DIR$/src/main.go" />
     <option name="run" value="false" />
