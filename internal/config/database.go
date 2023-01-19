@@ -1,18 +1,16 @@
 package config
 
 import (
-	"database/sql"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
-	"github.com/thanh-vt/splash-inventory-service/internal/middleware"
+	"github.com/thanh-vt/splash-inventory-service/internal/controller"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 	"os"
 	"strconv"
 )
 
-var DB *sql.DB
-
-func ConnectDatabase() {
+func ConnectDatabase() error {
 	// connection string
 	var psqlConn string
 	if os.Getenv("DATABASE_URL") != "" {
@@ -29,37 +27,14 @@ func ConnectDatabase() {
 	}
 
 	// open database
-	DB, err := sql.Open("postgres", psqlConn)
-	// close database
-	defer func(db *sql.DB) {
-		err := db.Close()
-		middleware.CheckErrorShutdown(err)
-	}(DB)
+	db, err := gorm.Open(postgres.Open(psqlConn), &gorm.Config{
+		SkipDefaultTransaction: true,
+	})
+	controller.DB = db
+	if err != nil {
+		return err
+	}
 
-	DB.SetMaxIdleConns(10)
-	DB.SetMaxOpenConns(20)
-
-	// check db
-	err = DB.Ping()
-	middleware.CheckErrorShutdown(err)
 	fmt.Println("Connected!")
-}
-
-//func SetSchema() error {
-//	_, err := DB.Exec("SET search_path TO splash_inventory, public")
-//	return err
-//}
-
-func WithTransaction(c *gin.Context, handler gin.HandlerFunc) {
-	var err error
-	var tx *sql.Tx
-	if tx, err = DB.Begin(); err != nil {
-		middleware.InternalServer(c, err)
-		return
-	}
-	handler(c)
-	if err = tx.Commit(); err != nil {
-		middleware.InternalServer(c, err)
-		return
-	}
+	return err
 }

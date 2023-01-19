@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Build And Run (Windows)" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="splash-inventory-service" />
     <working_directory value="$PROJECT_DIR$" />
     <go_parameters value="-o ../../build/splash-inventory-service-v1.exe" />
     <EXTENSION ID="net.ashald.envfile">
@@ -14,7 +15,7 @@
       </ENTRIES>
     </EXTENSION>
     <kind value="PACKAGE" />
-    <package value="github.com/thanh-vt/spooky-cart-service/cmd/splash-inventory-service" />
+    <package value="github.com/thanh-vt/splash-inventory-service/cmd/splash-inventory-service" />
     <directory value="$PROJECT_DIR$" />
     <filePath value="$PROJECT_DIR$/src/main.go" />
     <output_directory value="$PROJECT_DIR$/build" />
