@@ -1,2 +1,2 @@
 # splash-inventory-service
-Cart API
+Inventory API
