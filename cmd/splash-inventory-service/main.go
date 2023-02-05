@@ -17,8 +17,11 @@ type HtmlModel = map[string]interface{}
 
 func main() {
 	internal.HttpClient = new(http.Client)
-	config.ConnectRedis()
-	err := config.ConnectDatabase() // connect database
+	err := config.ConnectRedis() // connect redis
+	if err != nil {
+		panic(err.Error())
+	}
+	err = config.ConnectDatabase() // connect database
 	if err != nil {
 		panic(err.Error())
 	}

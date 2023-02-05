@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="396372cd-8d3e-4e93-b08f-f1bcbcf3a3d8" name="Changes" comment="update add redis">
-      <change afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+    <list default="true" id="396372cd-8d3e-4e93-b08f-f1bcbcf3a3d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/config/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/cache.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +91,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="migrate from gin fw to chi router lib" />
     <MESSAGE value="update add redis" />
-    <option name="LAST_COMMIT_MESSAGE" value="update add redis" />
+    <MESSAGE value="add debug config" />
+    <option name="LAST_COMMIT_MESSAGE" value="add debug config" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
