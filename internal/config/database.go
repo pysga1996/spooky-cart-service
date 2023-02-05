@@ -3,7 +3,7 @@ package config
 import (
 	"fmt"
 	_ "github.com/lib/pq"
-	"github.com/thanh-vt/splash-inventory-service/internal/controller"
+	"github.com/thanh-vt/splash-inventory-service/internal"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"os"
@@ -30,7 +30,7 @@ func ConnectDatabase() error {
 	db, err := gorm.Open(postgres.Open(psqlConn), &gorm.Config{
 		SkipDefaultTransaction: true,
 	})
-	controller.DB = db
+	internal.DB = db
 	if err != nil {
 		return err
 	}

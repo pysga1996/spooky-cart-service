@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/thanh-vt/splash-inventory-service/internal"
 	"github.com/thanh-vt/splash-inventory-service/internal/config"
 	"github.com/thanh-vt/splash-inventory-service/internal/controller"
 	customMiddleware "github.com/thanh-vt/splash-inventory-service/internal/middleware"
@@ -15,6 +16,8 @@ import (
 type HtmlModel = map[string]interface{}
 
 func main() {
+	internal.HttpClient = new(http.Client)
+	config.ConnectRedis()
 	err := config.ConnectDatabase() // connect database
 	if err != nil {
 		panic(err.Error())

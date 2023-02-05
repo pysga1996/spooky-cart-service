@@ -5,28 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="396372cd-8d3e-4e93-b08f-f1bcbcf3a3d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Build_And_Run__Windows_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build_And_Run__Windows_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/config/cache.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/global.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Build__Linux_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build__Linux_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/splash-inventory-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/splash-inventory-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/spooky-cart-service/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/config/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/routes.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/constant/constant.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/constant/constant.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/inventory_controller.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/stock_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/controller/supplier_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/controller/supplier_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/controller/supplier_controller.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/middleware/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/middleware/error.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/error.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/middleware/guard.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/guard.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/cart.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/cart_product.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/stock.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/stock.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/supplier.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/supplier.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/util/converter.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/util/converter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spooky-cart-service-v1" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,23 +45,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/pysga",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pysga&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
+  <component name="RedisHelper">
+    <option name="connections">
+      <list>
+        <ConnectionInfo>
+          <option name="global" value="false" />
+          <option name="id" value="aec38d3f-df04-40d8-9fd7-86d71805d298" />
+          <option name="name" value="localhost" />
+          <option name="port" value="6379" />
+          <option name="url" value="localhost" />
+        </ConnectionInfo>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Go Build.Build And Run (Windows)">
     <list>
       <item itemvalue="Go Build.Build (Linux)" />
@@ -84,6 +87,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="migrate from gin fw to chi router lib" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrate from gin fw to chi router lib" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

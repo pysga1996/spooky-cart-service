@@ -2,25 +2,90 @@ package middleware
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/golang-jwt/jwt"
+	"github.com/redis/go-redis/v9"
+	"github.com/square/go-jose"
+	"github.com/thanh-vt/splash-inventory-service/internal"
 	"github.com/thanh-vt/splash-inventory-service/internal/constant"
+	"io"
+	"log"
 	"net/http"
 	"os"
 	"strings"
 	"time"
-
-	"github.com/s12v/go-jwks"
 )
 
-var jwksSource = jwks.NewWebSource(os.Getenv("JWKS_URL"))
+func getJSONWebKeySetFromCache() (*jose.JSONWebKeySet, bool) {
+	val, err := internal.Redis.Get(internal.RedisCtx, constant.JwksCacheKey).Result()
+	if err != nil {
+		if err == redis.Nil {
+			return nil, false
+		}
+		panic(err)
+	}
+	jsonWebKeySet := new(jose.JSONWebKeySet)
+	if err = json.Unmarshal([]byte(val), &jsonWebKeySet); err != nil {
+		return nil, false
+	}
 
-var jwksClient = jwks.NewDefaultClient(
-	jwksSource,
-	time.Hour,    // Refresh keys every 1 hour
-	12*time.Hour, // Expire keys after 12 hours
-)
+	return jsonWebKeySet, true
+}
+
+func fetchJSONWebKeySet() *jose.JSONWebKeySet {
+	var resp *http.Response
+	var err error
+	var jwksUrl = os.Getenv("JWKS_URL")
+	log.Printf("Fetchng JWKS from %s", jwksUrl)
+
+	if resp, err = internal.HttpClient.Get(jwksUrl); err != nil {
+		panic(err)
+	}
+	defer func(Body io.ReadCloser) {
+		if err = Body.Close(); err != nil {
+			panic(err)
+		}
+	}(resp.Body)
+	if resp.StatusCode != 200 {
+		panic(fmt.Errorf("failed request, status: %d", resp.StatusCode))
+	}
+
+	jsonWebKeySet := new(jose.JSONWebKeySet)
+	if err = json.NewDecoder(resp.Body).Decode(jsonWebKeySet); err != nil {
+		panic(err)
+	}
+
+	return jsonWebKeySet
+}
+
+func getJSONWebKey(keyId string) *jose.JSONWebKey {
+	var val []byte
+	var err error
+	jwks, exists := getJSONWebKeySetFromCache()
+	if !exists {
+		jwks = fetchJSONWebKeySet()
+		if val, err = json.Marshal(jwks); err != nil {
+			panic(err)
+		}
+		if _, err = internal.Redis.Set(internal.RedisCtx, constant.JwksCacheKey,
+			string(val), 24*time.Hour).Result(); err != nil {
+			panic(err)
+		}
+	}
+	var keys []jose.JSONWebKey
+
+	if keyId == "" {
+		keys = jwks.Keys
+	} else {
+		keys = jwks.Key(keyId)
+	}
+	if len(keys) == 0 {
+		panic(fmt.Errorf("JWK is not found: %s", keyId))
+	}
+	return &keys[0]
+}
 
 func HandleToken(next http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
@@ -33,11 +98,8 @@ func HandleToken(next http.Handler) http.Handler {
 			return
 		}
 		tokenStr := tokenArr[1]
-		jwk, err := jwksClient.GetSignatureKey(os.Getenv("JWKS_ID"))
-		if err != nil {
-			BadRequest(w, r, err)
-			return
-		}
+		jwk := getJSONWebKey("")
+
 		// Parse takes the token string and a function for looking up the key. The latter is especially
 		// useful if you use multiple keys for your application.  The standard is to use 'kid' in the
 		// head of the token to identify which key to use, but the parsed token (head and claims) is provided

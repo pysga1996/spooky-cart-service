@@ -9,3 +9,9 @@ const (
 	StatusActive   Status = 1
 	StatusRemoved  Status = 2
 )
+
+const BaseCacheKey = "REVICE_COMMERCE"
+
+const CacheSeparator = "::"
+
+const JwksCacheKey = BaseCacheKey + CacheSeparator + "JWKS"

@@ -22,6 +22,7 @@
     <package value="github.com/thanh-vt/splash-inventory-service/cmd/splash-inventory-service" />
     <directory value="$PROJECT_DIR$" />
     <filePath value="$PROJECT_DIR$/src/main.go" />
+    <output_directory value="$PROJECT_DIR$/build" />
     <option name="run" value="false" />
     <method v="2" />
   </configuration>
