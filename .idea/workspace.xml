@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="396372cd-8d3e-4e93-b08f-f1bcbcf3a3d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/config/cache.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/global.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Build__Linux_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build__Linux_.xml" afterDir="false" />
+    <list default="true" id="396372cd-8d3e-4e93-b08f-f1bcbcf3a3d8" name="Changes" comment="update add redis">
+      <change afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deploy/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/constant/constant.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/constant/constant.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/supplier_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/controller/supplier_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/middleware/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/auth.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +24,13 @@
     </option>
   </component>
   <component name="GOROOT" url="file://C:/Program Files/Go" />
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -75,10 +75,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.Build And Run (Windows)">
+  <component name="RunManager" selected="Go Remote.REMOTE_DEBUG">
+    <configuration name="REMOTE_DEBUG" type="GoRemoteDebugConfigurationType" factoryName="Go Remote" port="9090">
+      <option name="disconnectOption" value="ASK" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.Build (Linux)" />
       <item itemvalue="Go Build.Build And Run (Windows)" />
+      <item itemvalue="Go Remote.REMOTE_DEBUG" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -88,7 +93,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="migrate from gin fw to chi router lib" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate from gin fw to chi router lib" />
+    <MESSAGE value="update add redis" />
+    <option name="LAST_COMMIT_MESSAGE" value="update add redis" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
