@@ -6,7 +6,6 @@ ENV GOARCH amd64
 RUN mkdir "/opt/splash-inventory-service"
 RUN mkdir -p "/opt/splash-inventory-service/web/templates"
 COPY . /tmp/splash-inventory-service/
-
 RUN go build -gcflags="all=-N -l" -o /opt/splash-inventory-service/splash-inventory-service-v1 github.com/thanh-vt/splash-inventory-service/cmd/splash-inventory-service
 
 FROM golang:1.20-alpine AS main

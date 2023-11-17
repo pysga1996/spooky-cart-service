@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="396372cd-8d3e-4e93-b08f-f1bcbcf3a3d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/splash-inventory-service/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/cache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,8 @@
     <MESSAGE value="migrate from gin fw to chi router lib" />
     <MESSAGE value="update add redis" />
     <MESSAGE value="add debug config" />
-    <option name="LAST_COMMIT_MESSAGE" value="add debug config" />
+    <MESSAGE value="update redis ping" />
+    <option name="LAST_COMMIT_MESSAGE" value="update redis ping" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
