@@ -4,9 +4,36 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="396372cd-8d3e-4e93-b08f-f1bcbcf3a3d8" name="Changes" comment="">
+    <list default="true" id="396372cd-8d3e-4e93-b08f-f1bcbcf3a3d8" name="Changes" comment="update redis ping">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/keycloak.0WATHg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/keycloak.0WATHg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/keycloak.0WATHg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ/schema/keycloak.0WATHg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ/schema/learning_sql.LaE2qg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ/schema/meadow_payment.qmQZjg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ/schema/omega_buy.qFqoGA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ/schema/spooky_cart.tLtKBw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/postgres.edMnLQ/schema/zap_shipping.BBcS3A.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/dread_catalog.1PTCfg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/meadow_payment.qmQZjg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/mind_order.IQl1yA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/splash_inventory.hKlCbg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/spooky_customer.clZDyw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad17e25b-4bdd-4131-9617-cbebf75d63a4/storage_v2/_src_/database/revice.CPdOyA/schema/zap_delivery.SlXsKw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/splash-inventory-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/splash-inventory-service.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +61,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2KXzSML4Gwul2uDsXTqphIBxske" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,23 +73,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pysga&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.Build (Linux).executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/thanhvt.VISSOFT",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "go"
   }
-}</component>
+}]]></component>
   <component name="RedisHelper">
     <option name="connections">
       <list>
@@ -72,7 +110,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Remote.REMOTE_DEBUG">
+  <component name="RunManager" selected="Go Build.Build (Linux)">
     <configuration name="REMOTE_DEBUG" type="GoRemoteDebugConfigurationType" factoryName="Go Remote" port="9090">
       <option name="disconnectOption" value="ASK" />
       <method v="2" />
@@ -82,6 +120,13 @@
       <item itemvalue="Go Build.Build And Run (Windows)" />
       <item itemvalue="Go Remote.REMOTE_DEBUG" />
     </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.14475.38" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
